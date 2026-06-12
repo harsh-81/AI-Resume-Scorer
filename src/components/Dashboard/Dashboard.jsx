@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Dashboard.module.css";
 import CreditScoreIcon from '@mui/icons-material/CreditScore';
+import Skeleton from "@mui/material/Skeleton";
+import WithAuthHOC from "../../utils/HOC/withAuthHOC";
 
 const Dashboard = () => {
   return (
@@ -62,10 +64,11 @@ const Dashboard = () => {
           </div>
         </div>
 
+          <Skeleton variant="rectangular" sx={{borderRadius: "20px"}} width={266} height={200}/>
         
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default WithAuthHOC(Dashboard);
